@@ -6,11 +6,6 @@ namespace FormsUpgradeTest.CustomFieldType
 {
     public class CountrySelect : FieldType
     {
-        private static readonly List<Setting> SettingsList = new List<Setting>
-        {
-            new LabelSettingAttribute("Enter value for country label"),
-        };
-
         public CountrySelect()
         {
             this.Id = new Guid("38b7ea54-e471-4bc8-a976-63a73d943bec");
@@ -21,6 +16,7 @@ namespace FormsUpgradeTest.CustomFieldType
             this.FieldTypeViewName = "FieldType.CountrySelect.cshtml";
         }
 
-        public override Dictionary<string, Setting> Settings() => SettingsList.ToDictionary(l => l.Alias, l => l);
+        [Setting("Label", Alias = "label", Description = "Enter value for country label", View = "textfield")]
+        public string? Label { get; set; }
     }
 }
