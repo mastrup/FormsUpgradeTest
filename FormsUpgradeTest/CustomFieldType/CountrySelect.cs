@@ -16,7 +16,7 @@ namespace FormsUpgradeTest.CustomFieldType
             this.FieldTypeViewName = "FieldType.CountrySelect.cshtml";
         }
 
-        [Setting("Label", Alias = "label", Description = "Enter value for country label", View = "textfield", SupportsPlaceholders = true)]
-        public string? Label { get; set; }
+        [Setting("label", Description = "Enter value for country label", View = "textfield", SupportsPlaceholders = true)]
+        public string? label { get; set; }
     }
 }
